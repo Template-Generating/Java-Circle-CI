@@ -6,9 +6,12 @@ jobs:
       - image: java:8
     steps:
       - checkout
+      - run: mkdir bin
+      - run: cd src
       - run:
           name: Compile
-          command: mkdir bin && cd src && javac -d ../bin/ -cp ".:..:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar" main/**/*.java ; cd ..
+          command: javac -d ../bin/ -cp ".:..:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar" main/**/*.java
+      - run: cd ..
       - run:
           name: Testing
           command: cd bin && java -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar main.test.SuiteTester > result.txt ; cd ..
