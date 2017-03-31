@@ -5,4 +5,5 @@ jobs:
     docker:
       - image: maven:3.3.9-jdk-8
     steps:
-      - run: ls && mvn integration-test
+      - checkout
+      - run: mvn test
