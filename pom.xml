@@ -7,16 +7,14 @@
     <groupId>some-id</groupId>
     <artifactId>Test</artifactId>
     <version>0.0.1</version>
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
             <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>LATEST</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

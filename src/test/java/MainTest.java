@@ -1,21 +1,23 @@
 import code.Main;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author kamontat
  * @version 1.0
  * @since Fri 31/Mar/2017 - 10:23 PM
  */
-class MainTest {
+public class MainTest {
 	private static final ByteArrayOutputStream stream = new ByteArrayOutputStream();
 	private static final PrintStream print = new PrintStream(stream);
 	
 	@Test
-	void main() {
+	public void main() {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -24,12 +26,12 @@ class MainTest {
 		System.setOut(print);
 		Main.main(null);
 		
-		Assertions.assertEquals("Hello World!", stream.toString().trim());
+		assertEquals("Hello World!", stream.toString().trim());
 	}
 	
 	@Test
-	void test1() {
-		Assertions.assertEquals(50, 25 * 2);
-		Assertions.assertEquals(10, 21 + 21);
+	public void test1() {
+		assertEquals(50, 25 * 2);
+		assertEquals(10, 21 + 21);
 	}
 }
