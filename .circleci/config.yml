@@ -3,14 +3,18 @@ jobs:
   build:
     working_directory: ~/App
     docker:
-      - image: maven:3.3.9-jdk-8
+      - image: java:8
     steps:
       - checkout
       - run:
-          name: Testing
-          command: mvn test
+          name: Compile
+          command: mkdir bin && cd src && javac -d ../bin/ -cp ".:..:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar" main/**/*.java ; cd ..
       - run:
-          name: Show results
-          command: cat target/surefire-reports/*.txt
-      - store_test_results:
-                path: target/surefire-reports/
+          name: Testing
+          command: cd bin && java -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar main.test.SuiteTester > result.txt ; cd ..
+      - run:
+          name: Show Result
+          command: cat result.txt
+
+# cd src && javac -d ../bin/ -cp ".:..:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar" main/**/*.java && cd ..
+# cd bin && java -cp .:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar main.test.SuiteTester > result.txt && cd ..
