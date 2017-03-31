@@ -1,4 +1,8 @@
-import org.junit.Assert;
+package main.test;
+
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author kamontat
@@ -6,9 +10,10 @@ import org.junit.Assert;
  * @since Fri 31/Mar/2017 - 11:07 PM
  */
 public class NewTest {
-	@org.junit.Test
+	@Test
 	public void main() {
 		// Assert.assertEquals("asdf", "fdsa"); // fail test
-		Assert.assertEquals(123, 123);
+		assertEquals(123, 123);
+		assertEquals(123, 321);
 	}
 }

@@ -1,5 +1,7 @@
-import code.Main;
+package main.test;
 
+import main.code.Main;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -29,13 +31,14 @@ public class MainTest {
 		assertEquals("Hello World!", stream.toString().trim());
 	}
 	
+	@Ignore
 	@Test
-	public void test1() {
+	public void test2() {
 		assertEquals(50, 25 * 2);
 	}
 	
 	@Test
 	public void failTest() {
-		// assertEquals(10, 21 + 21);
+		assertEquals(10, 21 + 21);
 	}
 }
