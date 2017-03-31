@@ -11,4 +11,9 @@ public class U5Test {
 	public void unit5() {
 		Assertions.assertEquals(1234, 1234);
 	}
+	
+	@Test
+	void fail() {
+		// Assertions.fail("just Fail!");
+	}
 }
