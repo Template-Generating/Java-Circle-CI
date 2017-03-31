@@ -1,5 +1,3 @@
-package test;
-
 import code.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -18,9 +16,20 @@ class MainTest {
 	
 	@Test
 	void main() {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		System.setOut(print);
 		Main.main(null);
 		
 		Assertions.assertEquals("Hello World!", stream.toString().trim());
+	}
+	
+	@Test
+	void test1() {
+		Assertions.assertEquals(50, 25 * 2);
+		Assertions.assertEquals(10, 21 + 21);
 	}
 }
