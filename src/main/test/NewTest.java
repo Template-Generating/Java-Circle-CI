@@ -14,6 +14,5 @@ public class NewTest {
 	public void main() {
 		// Assert.assertEquals("asdf", "fdsa"); // fail test
 		assertEquals(123, 123);
-		assertEquals(123, 321);
 	}
 }
