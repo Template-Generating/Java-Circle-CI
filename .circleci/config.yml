@@ -12,3 +12,5 @@ jobs:
       - run:
           name: Show results
           command: cat target/surefire-reports/*.txt
+      - store_test_results:
+                path: target/sure-reports/
