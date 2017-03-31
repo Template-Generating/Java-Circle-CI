@@ -8,9 +8,9 @@ jobs:
       - checkout
       - run:
           name: Testing
-          command: mvn test ; ls
+          command: mvn test
       - run:
           name: Show results
           command: cat target/surefire-reports/*.txt
       - store_test_results:
-                path: target/sure-reports/
+                path: target/surefire-reports/
