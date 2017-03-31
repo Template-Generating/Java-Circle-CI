@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/Test
     docker:
       - image: maven:3.3.9-jdk-8
     steps:
