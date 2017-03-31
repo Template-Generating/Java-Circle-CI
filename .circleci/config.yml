@@ -6,4 +6,9 @@ jobs:
       - image: maven:3.3.9-jdk-8
     steps:
       - checkout
-      - run: mvn test
+      - run:
+          name: Testing
+          command: mvn test
+      - run:
+          name: Show results
+          command: cat target/surefire-reports/*.txt
