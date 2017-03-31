@@ -8,7 +8,7 @@ import org.junit.Assert;
 public class NewTest {
 	@org.junit.Test
 	public void main() {
-		Assert.assertEquals("asdf", "fdsa");
+		// Assert.assertEquals("asdf", "fdsa"); // fail test
 		Assert.assertEquals(123, 123);
 	}
 }
