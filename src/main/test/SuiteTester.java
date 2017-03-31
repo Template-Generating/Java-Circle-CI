@@ -32,6 +32,7 @@ public class SuiteTester {
 	static class MyListener extends TextListener {
 		private static final String TAB = String.format("%4s", "");
 		private final PrintStream writerOut;
+		private boolean ignore = false; // ignore print exception stack
 		
 		public MyListener(JUnitSystem system) {
 			super(system);
@@ -70,13 +71,13 @@ public class SuiteTester {
 			writerOut.append(prefix).append(") ");
 			writerOut.append(getDescriptionString(each.getDescription()));
 			writerOut.append(each.getMessage()).append("\n");
-			
-			StackTraceElement[] e = each.getException().getStackTrace();
-			for (int i = 1; i < e.length; i++) {
-				if (e[i].isNativeMethod()) break;
-				writerOut.append(TAB).append(e[i].toString()).append("\n");
+			if (!ignore) {
+				StackTraceElement[] e = each.getException().getStackTrace();
+				for (int i = 1; i < e.length; i++) {
+					if (e[i].isNativeMethod()) break;
+					writerOut.append(TAB).append(e[i].toString()).append("\n");
+				}
 			}
-			// writerOut.println(each.getTrace());
 		}
 		
 		@Override
