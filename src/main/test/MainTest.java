@@ -31,12 +31,12 @@ public class MainTest {
 		assertEquals("Hello World!", stream.toString().trim());
 	}
 	
-	@Ignore
 	@Test
 	public void test2() {
 		assertEquals(50, 25 * 2);
 	}
 	
+	@Ignore
 	@Test
 	public void failTest() {
 		assertEquals(10, 21 + 21);

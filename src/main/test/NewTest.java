@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class NewTest {
 	@Test
 	public void main() {
-		assertEquals("asdf", "fdsa"); // fail test
+		// assertEquals("asdf", "fdsa"); // fail test
 		assertEquals(123, 123);
 	}
 }

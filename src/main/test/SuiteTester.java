@@ -16,23 +16,23 @@ import java.io.PrintStream;
  * @since Sat 01/Apr/2017 - 2:02 AM
  */
 public class SuiteTester {
+	// can config
+	private static final boolean ignoreException = false; // ignore to print exception stack
+	
 	private static RealSystem system = new RealSystem();
 	
 	public static void main(String[] args) {
 		JUnitCore core = new JUnitCore();
 		core.addListener(new MyListener(system));
-		Result e = core.run(MainTest.class, NewTest.class, MyTest.class);
 		
-		system.out().println("H");
-		
-		
-		// JUnitCore.main(MainTest.class.getName(), NewTest.class.getName(), MyTest.class.getName());
+		// add new testcase here
+		core.run(MainTest.class, NewTest.class, MyTest.class);
 	}
 	
 	static class MyListener extends TextListener {
 		private static final String TAB = String.format("%4s", "");
 		private final PrintStream writerOut;
-		private boolean ignore = false; // ignore print exception stack
+		private boolean ignore = ignoreException;
 		
 		public MyListener(JUnitSystem system) {
 			super(system);
