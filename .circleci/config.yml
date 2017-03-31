@@ -9,6 +9,8 @@ jobs:
       - run: mkdir bin
       - run: cd src
       - run: ls
+      - run: cd src/
+      - run: ls
       - run: ls ..
       - run:
           name: Compile
