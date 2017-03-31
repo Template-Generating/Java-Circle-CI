@@ -17,7 +17,7 @@ jobs:
           command: cd bin && cat result.txt ; cd ..
       - run:
           name: Check Failure
-          command: if [$(grep -o 'FAIL' bin/result.txt | wc -l) -eq 1 ]; then exit 1; else exit 0; fi
+          command: if [ $(grep -o 'FAIL' bin/result.txt | wc -l) -eq 1 ]; then exit 1; else exit 0; fi
 
 # New Folder
 # mkdir bin && cd src && javac -d ../bin/ -cp ".:..:../lib/hamcrest-core-1.3.jar:../lib/junit-4.12.jar" main/**/*.java ; cd ..
