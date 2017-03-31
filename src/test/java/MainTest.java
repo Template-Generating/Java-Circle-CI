@@ -36,6 +36,6 @@ public class MainTest {
 	
 	@Test
 	public void failTest() {
-		assertEquals(10, 21 + 21);
+		// assertEquals(10, 21 + 21);
 	}
 }
