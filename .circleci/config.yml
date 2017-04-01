@@ -11,10 +11,14 @@ jobs:
       ignore:
         - master
     steps:
+      - restore_cache:
+          key: projectname-{{ .Branch }}
       - checkout
       - run:
           name: Testing
           command: ./gradlew test
+      - save_cache:
+          key: projectname-{{ .Branch }}
       - store_test_results:
           path: app/build/test-results/testDebugUnitTest
       - store_test_results:
