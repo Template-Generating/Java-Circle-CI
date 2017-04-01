@@ -1,19 +1,20 @@
 version: 2
 jobs:
-  - build:
-      working_directory: ~/App
-      docker:
-        - image: gradle:3.4.1-jdk8
-      steps:
-        - checkout
-        - run:
-            name: Clean
-            command: gradle clean
-        - run:
-            name: Testing
-            command: gradle test
-        - store_test_results:
-                  path: build/test-results/junit-platform
-  - branches:
+  build:
+    working_directory: ~/App
+    branches:
       ignore:
         - master
+    docker:
+      - image: gradle:3.4.1-jdk8
+    steps:
+      - checkout
+      - run:
+          name: Clean
+          command: gradle clean
+      - run:
+          name: Testing
+          command: gradle test
+      - store_test_results:
+          path: build/test-results/junit-platform
+  -
