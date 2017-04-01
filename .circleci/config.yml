@@ -1,6 +1,21 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/App
+    docker:
+      - image: gradle:3.4.1-jdk8
     branches:
       ignore:
         - master
+    steps:
+      - checkout
+      - run:
+          name: Clean
+          command: gradle clean
+      - run:
+          name: Testing
+          command: gradle test
+      - store_test_results:
+          path: app/build/test-results/testDebugUnitTest
+      - store_test_results:
+          path: app/build/test-results/testReleaseUnitTest
