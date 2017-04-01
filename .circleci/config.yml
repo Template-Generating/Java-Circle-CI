@@ -11,8 +11,6 @@ jobs:
       ignore:
         - master
     steps:
-      - restore_cache:
-          key: projectname-{{ .Branch }}
       - run: ls ~
       - checkout
       - run:
