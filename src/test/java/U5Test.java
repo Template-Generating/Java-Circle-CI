@@ -1,5 +1,3 @@
-package test;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +14,6 @@ public class U5Test {
 	
 	@Test
 	void fail() {
-		// Assertions.fail("just Fail!");
+		Assertions.fail("just Fail!");
 	}
 }

@@ -21,6 +21,7 @@ gen### Java template
 
 # Package Files #
 *.jar
+!gradle
 *.war
 *.ear
 *.zip
@@ -267,3 +268,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+### Gradle
+.gradle/
