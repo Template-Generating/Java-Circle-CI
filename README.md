@@ -1,22 +1,32 @@
-# Circle-ci Template [![CircleCI](https://circleci.com/gh/OOP2017/Circle-ci-tester.svg?style=svg&circle-token=9734fe36021497616e3a8b6b71bb42d102a7b7c9)](https://circleci.com/gh/OOP2017/Circle-ci-tester)
-This project is template project to create assignment for student 
+# Circle-ci Template
+This project is template java project, for using in Circle-CI v2
 
-# What include in this project
-- `Maven`
-- `circle-ci` config at **.circleci** folder
-  - using circle-ci version **2**
-- Both `JUnit4` and `JUnit5`
-- `simple` code and simple `testcase`
+# What include?
+1. `Pure Java Version` at branch `/change/java`
+2. `Maven Version` at branch `/change/maven`
+3. `Gradle Version` at branch `/change/gradle`
+4. `circle-ci` config at **.circleci** folder
+5. Both `JUnit4` and `JUnit5` (except `pure java` will include **only** JUnit4)
+6. `simple` code and simple `testcase`
 
 # How to use
-Just remove `old` one and add `new` code and test
+1. Sign up [Circle-CI](https://circleci.com/)
+2. Add project that want to test in circle-ci
+3. Just remove `old` ones and add `new` **code** and **test**
+4. You result will happen at `https://circleci.com/dashboard`
 
-# Need to Know
-1. every test must in pattern `*Test` (* mean every thing)
-2. source code must stay at `src/main/java/` **ONLY**
-3. test code must stay at `src/test/java/` **ONLY**
-4. You can use both `JUnit4` and `JUnit5`
-5. You need to install maven in your computer or your IDE
-  - `IntelliJ`: no need, it's already included
-  - `Eclipse`: follow this [link](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjdpsuopIHTAhWIuo8KHUTHAjoQFggdMAE&url=http%3A%2F%2Fstackoverflow.com%2Fquestions%2F8620127%2Fmaven-in-eclipse-step-by-step-installation&usg=AFQjCNHsI6sELJo2HlnCoWvOTkBiV1NQYA)
-  - `Netbeans`: follow this [link](http://wiki.netbeans.org/MavenBestPractices)
+# How to get...
+
+## Status badges
+1. go **Projects** tab (on left hand side)
+2. choose User or Organization
+3. click settings (gear) on your wanted project
+4. on notification you will see `Status Badges` click on it
+5. choose `branch`, `token`(you might require to create new one), `code syntax`
+6. copy and parse whatever you want
+
+## Test Summary
+> Pure Java don't have this
+
+When you come inside `build` page ![Picture1](resource/build-page.png)
+The `Test Summary` will show result in shortest ways, BUT in pure java you need to look by yourself /or see at `Show Result` Tab

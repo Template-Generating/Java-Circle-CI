@@ -1,5 +1,6 @@
 version: 2
 jobs:
-  branches:
-    ignore:
-      - master
+  build:
+    branches:
+      ignore:
+        - master
