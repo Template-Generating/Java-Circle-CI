@@ -11,7 +11,15 @@ jobs:
       - restore_cache:
           key: projectname-{{ .Branch }}
       - run:
-          name: In docker
+          name: Install Docker client
+          command: |
+              set -x
+              VER="17.03.0-ce"
+              curl -L -o /tmp/docker-$VER.tgz https://get.docker.com/builds/Linux/x86_64/docker-$VER.tgz
+              tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+              mv /tmp/docker/* /usr/bin
+      - run:
+          name: Inside docker
           command: docker run --tty --interactive --volume=$(pwd):/opt/workspace --workdir=/opt/workspace --rm jacekmarchwicki/android:java7-8 /bin/sh
       - run:
           name: Setup
