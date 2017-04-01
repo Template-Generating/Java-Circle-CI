@@ -15,6 +15,9 @@ jobs:
           key: projectname-{{ .Branch }}
       - checkout
       - run:
+          name: Building
+          command: ./gradlew build
+      - run:
           name: Testing
           command: ./gradlew test
       - save_cache:
