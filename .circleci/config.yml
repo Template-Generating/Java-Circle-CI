@@ -4,6 +4,9 @@ jobs:
     working_directory: ~/App
     docker:
       - image: maven:3.3.9-jdk-8
+    branches:
+      ignore:
+        - master
     steps:
       - checkout
       - run:
