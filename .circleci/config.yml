@@ -8,6 +8,9 @@ jobs:
       ignore:
         - master
     steps:
+      - run:
+          name: install git
+          command: apt-get update && apt-get install git-all
       - restore_cache:
           key: projectname-{{ .Branch }}
       - checkout
