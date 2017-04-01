@@ -1,5 +1,8 @@
 version: 2
 jobs:
+  branches:
+    ignore:
+      - master
   build:
     working_directory: ~/App
     docker:
