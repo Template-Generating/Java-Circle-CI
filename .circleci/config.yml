@@ -3,16 +3,13 @@ jobs:
   build:
     working_directory: ~/App
     docker:
-      - image: jacekmarchwicki/android:java7-8
+      - image: beevelop/android:latest
     branches:
       ignore:
         - master
     steps:
       - restore_cache:
           key: projectname-{{ .Branch }}
-      - run:
-          name: Set ENV
-          command: export GRADLE_USER_HOME="$(pwd)/.gradle" && export ANDROID_HOME="$(pwd)/.android"
       - checkout
       - run:
           name: Testing
