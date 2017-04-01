@@ -3,17 +3,3 @@ jobs:
   branches:
     ignore:
       - master
-  build:
-    working_directory: ~/App
-    docker:
-      - image: maven:3.3.9-jdk-8
-    steps:
-      - checkout
-      - run:
-          name: Testing
-          command: mvn test
-      - run:
-          name: Show results
-          command: cat target/surefire-reports/*.txt
-      - store_test_results:
-                path: target/surefire-reports/
