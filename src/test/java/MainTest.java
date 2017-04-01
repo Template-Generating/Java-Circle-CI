@@ -1,4 +1,4 @@
-import code.Main;
+package test;
 
 import org.junit.Test;
 
