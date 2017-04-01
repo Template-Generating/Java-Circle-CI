@@ -1,4 +1,7 @@
 # Circle-ci Template
+
+> **Current Circle-CI Version (2) NOT SUPPORT ANDROID APPLICATION**
+
 This project is template java project, for using in Circle-CI v2
 
 # What include?
