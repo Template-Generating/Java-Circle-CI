@@ -4,14 +4,13 @@ jobs:
     working_directory: ~/App
     docker:
       - image: jacekmarchwicki/android:java7-8
+        environment:
+          GRADLE_USER_HOME="$(pwd)/.gradle"
+          ANDROID_HOME="$(pwd)/.android"
     branches:
       ignore:
         - master
     steps:
-      - setup_remote_docker
-      - run: |
-          export GRADLE_USER_HOME="$(pwd)/.gradle"
-          export ANDROID_HOME="$(pwd)/.android"
       - checkout
       - run:
           name: Clean
