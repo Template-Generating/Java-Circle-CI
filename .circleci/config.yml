@@ -11,10 +11,10 @@ jobs:
       - checkout
       - run:
           name: Clean
-          command: gradle clean
+          command: ./gradlew clean
       - run:
           name: Testing
-          command: gradle test
+          command: ./gradlew test
       - store_test_results:
           path: app/build/test-results/testDebugUnitTest
       - store_test_results:
