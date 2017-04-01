@@ -17,4 +17,3 @@ jobs:
           command: gradle test
       - store_test_results:
           path: build/test-results/junit-platform
-  -
