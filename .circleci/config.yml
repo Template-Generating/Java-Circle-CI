@@ -2,11 +2,11 @@ version: 2
 jobs:
   build:
     working_directory: ~/App
+    docker:
+      - image: gradle:3.4.1-jdk8
     branches:
       ignore:
         - master
-    docker:
-      - image: gradle:3.4.1-jdk8
     steps:
       - checkout
       - run:
