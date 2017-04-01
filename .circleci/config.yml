@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/App
     docker:
-      - image: gradle:3.4.1-jdk8
+      - image: jacekmarchwicki/android:java7-8
     branches:
       ignore:
         - master
