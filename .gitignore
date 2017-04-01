@@ -127,7 +127,7 @@ gen### Java template
 hs_err_pid*
 ### Gradle template
 .gradle
-/build/
+/.android/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
